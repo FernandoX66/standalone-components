@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "standalone-components"
+  "defaultProject": "standalone-components",
+  "cli": {
+    "analytics": "05aad761-e04f-4053-b2cb-387faeb157ea"
+  }
 }
