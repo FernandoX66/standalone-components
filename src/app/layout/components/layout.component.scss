@@ -1,0 +1,111 @@
+@import "colors.scss";
+
+.layout {
+  display: flex;
+
+  .sidenav {
+    transition: width 0.3s ease-in-out;
+    width: 220px;
+    height: 100vh;
+    background-color: $darkBlack;
+    position: relative;
+
+    ul {
+      padding-top: 80px;
+
+      li {
+        div {
+          display: flex;
+          align-items: center;
+          padding: 13px 25px;
+          border-left: 4px solid $darkBlack;
+          transition: background-color 0.05s ease-in;
+
+          img {
+            width: 25px;
+            height: 20px;
+            margin-right: 15px;
+            filter: brightness(0.4);
+          }
+
+          p {
+            margin: 0;
+            color: $grayWhite;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+          }
+
+          &:hover {
+            font-weight: bold;
+            background-color: $hoverBlack;
+            cursor: pointer;
+            background-color: $hoverBlack;
+            border-left: 4px solid $white;
+
+            img {
+              filter: brightness(1);
+            }
+
+            p {
+              color: $white;
+            }
+          }
+        }
+
+        .active-link {
+          font-weight: bold;
+          background-color: $hoverBlack;
+          border-left: 4px solid $white;
+
+          img {
+            filter: brightness(1);
+          }
+
+          p {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .toggle-div {
+      position: absolute;
+      padding: 12px 25px;
+      border-top: 1px solid #3e3e3e;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 35px;
+        height: 25px;
+        transition: transform 0.05s ease-in;
+        transform: rotate(180deg);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .sidenav-collapsed {
+    width: 75px;
+
+    p {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .toggle-div {
+      img {
+        transform: unset;
+      }
+    }
+  }
+
+  .content {
+    padding: 30px;
+  }
+}

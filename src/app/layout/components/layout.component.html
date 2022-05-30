@@ -1,0 +1,23 @@
+<div class="layout">
+  <div class="sidenav" [ngClass]="{ 'sidenav-collapsed': !isNavExpanded }">
+    <nav>
+      <ul>
+        <li *ngFor="let item of navMenu">
+          <div [routerLink]="[item.path]" routerLinkActive="active-link">
+            <img [src]="item.icon" />
+            <p>{{ item.name }}</p>
+          </div>
+          <!-- <a [routerLink]="[item.path]" routerLinkActive="active-link"
+            ><img [src]="item.icon" />{{ item.name }}</a
+          > -->
+        </li>
+      </ul>
+    </nav>
+    <div class="toggle-div">
+      <img src="assets/icons/arrow.svg" (click)="toggleNav()" />
+    </div>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
