@@ -1,1 +1,18 @@
-<p>games works!</p>
+<div class="games-screen-container">
+  <h1>Available Games</h1>
+  <div class="game-cards">
+    <ng-container *ngFor="let game of games">
+      <div
+        class="game-card"
+        (click)="selectGame(game)"
+        [ngClass]="{ 'selected-game': selectedGame === game }"
+      >
+        <div class="game-card-info">
+          <h2>{{ game.name }}</h2>
+          <p>{{ game.description }}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <button [disabled]="!selectedGame" (click)="playGame()">Play</button>
+</div>

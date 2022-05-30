@@ -1,6 +1,10 @@
 <div class="layout">
   <div class="sidenav" [ngClass]="{ 'sidenav-collapsed': !isNavExpanded }">
     <nav>
+      <div class="sidenav-header">
+        <h1>AofHearts</h1>
+        <img src="/assets/images/cards.png" />
+      </div>
       <ul>
         <li *ngFor="let item of navMenu">
           <div [routerLink]="[item.path]" routerLinkActive="active-link">

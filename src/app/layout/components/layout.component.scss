@@ -5,21 +5,39 @@
 
   .sidenav {
     transition: width 0.3s ease-in-out;
-    width: 220px;
+    width: 240px;
     height: 100vh;
     background-color: $darkBlack;
     position: relative;
 
+    .sidenav-header {
+      display: flex;
+      align-items: center;
+      padding: 25px 0 0 35px;
+
+      img {
+        width: 30px;
+      }
+
+      h1 {
+        font-size: 27px;
+        color: $pink;
+        margin: 0 7px 0 0;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      }
+    }
+
     ul {
-      padding-top: 80px;
+      padding-top: 50px;
 
       li {
         div {
           display: flex;
           align-items: center;
           padding: 13px 25px;
-          border-left: 4px solid $darkBlack;
           transition: background-color 0.05s ease-in;
+          margin: 5px 12px;
+          border-radius: 10px;
 
           img {
             width: 25px;
@@ -29,6 +47,7 @@
           }
 
           p {
+            letter-spacing: 0.3px;
             margin: 0;
             color: $grayWhite;
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -39,7 +58,6 @@
             background-color: $hoverBlack;
             cursor: pointer;
             background-color: $hoverBlack;
-            border-left: 4px solid $white;
 
             img {
               filter: brightness(1);
@@ -54,7 +72,6 @@
         .active-link {
           font-weight: bold;
           background-color: $hoverBlack;
-          border-left: 4px solid $white;
 
           img {
             filter: brightness(1);
@@ -93,9 +110,27 @@
   .sidenav-collapsed {
     width: 75px;
 
+    ul {
+      li {
+        div {
+          padding: 13px 17px;
+        }
+      }
+    }
+
     p {
       opacity: 0;
       visibility: hidden;
+    }
+
+    .sidenav-header {
+      padding: 25px 0 0 22px;
+
+      h1 {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
     }
 
     .toggle-div {
@@ -107,5 +142,6 @@
 
   .content {
     padding: 30px;
+    flex: 1;
   }
 }

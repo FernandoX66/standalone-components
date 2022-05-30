@@ -1,0 +1,96 @@
+@import "colors.scss";
+
+.games-screen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+
+  h1 {
+    text-align: center;
+  }
+
+  button {
+    width: 170px;
+    margin-top: 20px;
+    border: 0;
+    font-family: inherit;
+    padding: 9px;
+    border-radius: 3px;
+    background-color: $pink;
+    color: $white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.1s ease-in-out;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $lightPink;
+    }
+
+    &:disabled {
+      background-color: $grayWhite;
+      cursor: default;
+    }
+  }
+
+  .game-cards {
+    width: 100%;
+    max-width: 450px;
+    margin: 25px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+
+    .game-card {
+      border: 1px solid $darkGray;
+      border-radius: 5px;
+      padding: 15px;
+      color: $grayWhite;
+      font-size: 14px;
+      letter-spacing: 0.1px;
+
+      h2 {
+        transition: color 0.3s ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: $white;
+
+        p {
+          display: block;
+        }
+      }
+
+      p {
+        margin-top: 10px;
+        display: none;
+        animation: text-enter 0.3s ease-in-out;
+      }
+
+      @keyframes text-enter {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+
+    .selected-game {
+      color: $white;
+      border: 1px solid $white;
+
+      p {
+        display: block;
+      }
+    }
+  }
+}
